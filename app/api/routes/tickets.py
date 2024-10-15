@@ -25,7 +25,7 @@ async def read_ticket(ticket_id: int, db: Session = Depends(get_db)):
 
 @router.put('/{ticket_id}', response_model=TicketResponse)
 async def update_ticket(ticket_id: int, ticket: TicketCreate, db: Session = Depends(get_db)):
-    db_ticket = crud.update_ticket(db, ticket_id, ticket.title, ticket.description, ticket.project_id)
+    db_ticket = crud.update_ticket(db, ticket_id, ticket.title, ticket.description, ticket.project_id, ticket.priority, ticket.status)
     if not db_ticket:
         raise HTTPException(status_code=404, detail="Ticket not found")
     return db_ticket
