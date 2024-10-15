@@ -30,8 +30,15 @@ def delete_project(db: Session, project_id: int) -> None:
     return project
 
 # CRUD operations for Ticket
-def create_ticket(db: Session, title: str, description: str, project_id: int) -> Ticket:
-    ticket = Ticket(title=title, description=description, project_id=project_id)
+def create_ticket(
+    db: Session,
+    title: str,
+    description: str,
+    project_id: int,
+    priority: str,
+    status: str
+) -> Ticket:
+    ticket = Ticket(title=title, description=description, project_id=project_id, priority=priority, status=status)
     db.add(ticket)
     db.commit()
     db.refresh(ticket)

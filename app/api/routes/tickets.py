@@ -13,7 +13,7 @@ router = APIRouter()
 
 @router.post('', response_model=TicketResponse)
 async def create_ticket(ticket: TicketCreate, db: Session = Depends(get_db)):
-    db_ticket = crud.create_ticket(db, ticket.title, ticket.description, ticket.project_id)
+    db_ticket = crud.create_ticket(db, ticket.title, ticket.description, ticket.project_id, ticket.priority, ticket.status)
     return db_ticket
 
 @router.get('/{ticket_id}', response_model=TicketResponse)
