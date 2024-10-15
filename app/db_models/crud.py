@@ -59,3 +59,10 @@ def update_ticket(db: Session, ticket_id: int, title: str, description: str, pro
       db.commit()
       db.refresh(ticket)
     return ticket
+
+def delete_ticket(db: Session, ticket_id: int) -> None:
+    ticket = db.query(Ticket).filter(Ticket.id == ticket_id).first()
+    if ticket:
+      db.delete(ticket)
+      db.commit()
+    return ticket
