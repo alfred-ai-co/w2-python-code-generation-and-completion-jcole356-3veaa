@@ -5,6 +5,7 @@ from datetime import datetime
 class TicketCreate(BaseModel):
   title: str
   description: str
+  project_id: int
   status: Literal['open', 'in_progress', 'closed'] = 'open'
 
 class TicketResponse(TicketCreate):
