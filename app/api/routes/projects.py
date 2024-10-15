@@ -19,6 +19,8 @@ async def create_project(project: ProjectCreate, db: Session = Depends(get_db)):
 @router.get('/{project_id}', response_model=ProjectResponse)
 async def read_project(project_id: int, db: Session = Depends(get_db)):
     db_project = crud.get_project(db, project_id)
+    if not db_project:
+        raise HTTPException(status_code=401, detail="Project not found")
     return db_project
 
 @router.put('/{project_id}', response_model=ProjectResponse)
