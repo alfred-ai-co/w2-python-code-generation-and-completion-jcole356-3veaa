@@ -10,9 +10,6 @@ def create_project(db: Session, name: str, description: str) -> Project:
     db.refresh(project)
     return project
 
-# TODO: Get is a hot mess if there is no record
-'''Edge Cases: Test edge cases, such as trying to update or delete a project that doesn’t exist,
-to see how the API handles such scenarios. This will help you identify if additional error handling is needed.'''
 def get_project(db: Session, project_id: int) -> Project:
     return db.query(Project).filter(Project.id == project_id).first()
 
@@ -30,3 +27,4 @@ def delete_project(db: Session, project_id: int) -> None:
     if project:
       db.delete(project)
       db.commit()
+    return project
