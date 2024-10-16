@@ -50,13 +50,12 @@ def get_ticket(db: Session, ticket_id: int) -> Ticket:
 
 def update_ticket(db: Session, ticket_id: int, title: str, description: str, project_id: int, priority: str, status: str) -> Ticket:
     ticket = db.query(Ticket).filter(Ticket.id == ticket_id).first()
-    # TODO: This would currently require all ticket attributes to be passed in the request body
     if ticket:
-      ticket.title = title
-      ticket.description = description
-      ticket.project_id = project_id
-      ticket.priority = priority
-      ticket.status = status
+      ticket.title = title or ticket.title
+      ticket.description = description or ticket.description
+      ticket.project_id = project_id or ticket.project_id
+      ticket.priority = priority or ticket.priority
+      ticket.status = status or ticket.status
       db.commit()
       db.refresh(ticket)
     return ticket
