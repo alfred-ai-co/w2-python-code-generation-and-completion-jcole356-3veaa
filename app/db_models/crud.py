@@ -17,8 +17,8 @@ def get_project(db: Session, project_id: int) -> Project:
 def update_project(db: Session, project_id: int, name: str, description: str) -> Project:
     project = db.query(Project).filter(Project.id == project_id).first()
     if project:
-      project.name = name
-      project.description = description
+      project.name = name or project.name
+      project.description = description or project.description
       db.commit()
       db.refresh(project)
     return project
