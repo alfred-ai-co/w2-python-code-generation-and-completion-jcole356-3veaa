@@ -1,14 +1,16 @@
 # Project Endpoints
 from fastapi import APIRouter, HTTPException
 from sqlalchemy.orm import Session
-from app.api_models.message import Message
 from fastapi import Depends
 
 import app.db_models.crud as crud
+from app.api_models.message import Message
 from app.api_models.projects import ProjectCreate, ProjectResponse
 from app.api.dependencies.sqldb import get_db
 
+
 router = APIRouter()
+
 
 @router.post('', response_model=ProjectResponse)
 async def create_project(project: ProjectCreate, db: Session = Depends(get_db)):
