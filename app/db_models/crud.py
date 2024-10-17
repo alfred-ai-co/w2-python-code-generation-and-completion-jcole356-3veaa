@@ -21,7 +21,7 @@ def create_ticket(db: Session, title: str, project_id: int, description: Optiona
 def get_ticket(db: Session, ticket_id: int) -> Optional[Ticket]:
     return db.query(Ticket).filter(Ticket.id == ticket_id).first()
 
-def update_ticket(db: Session, ticket_id: int, title: Optional[str] = None, description: Optional[str] = None, status: Optional[str] = None, priority: Optional[str] = None) -> Optional[Ticket]:
+def update_ticket(db: Session, ticket_id: int, title: str, project_id: int, description: Optional[str] = None, status: Optional[str] = None, priority: Optional[str] = None) -> Optional[Ticket]:
     ticket = db.query(Ticket).filter(Ticket.id == ticket_id).first()
     if ticket:
         if title is not None:
@@ -32,6 +32,8 @@ def update_ticket(db: Session, ticket_id: int, title: Optional[str] = None, desc
             ticket.status = status
         if priority is not None:
             ticket.priority = priority
+        if project_id is not None:
+            ticket.project_id = project_id
         db.commit()
         db.refresh(ticket)
     return ticket

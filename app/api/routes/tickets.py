@@ -23,7 +23,7 @@ def read_ticket(ticket_id: int, db: Session = Depends(get_db)):
 
 @router.put("/tickets/{ticket_id}", response_model=tickets.TicketResponse)
 def update_ticket(ticket_id: int, ticket: tickets.TicketCreate, db: Session = Depends(get_db)):
-  db_ticket = crud.update_ticket(db=db, ticket_id=ticket_id, ticket=ticket)
+  db_ticket = crud.update_ticket(db=db, ticket_id=ticket_id, title=ticket.title, project_id=ticket.project_id, description=ticket.description, status=ticket.status, priority=ticket.priority)
   if db_ticket is None:
     raise HTTPException(status_code=404, detail="Ticket not found")
   return db_ticket
