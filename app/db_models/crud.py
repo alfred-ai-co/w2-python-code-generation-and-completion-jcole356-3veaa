@@ -17,3 +17,6 @@ def create_ticket(db: Session, ticket_id: int, title: str, description: Optional
     db.commit()
     db.refresh(new_ticket)
     return new_ticket
+    
+def get_ticket(db: Session, ticket_id: int) -> Optional[Ticket]:
+    return db.query(Ticket).filter(Ticket.id == ticket_id).first()
