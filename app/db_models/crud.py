@@ -5,13 +5,13 @@ from app.db_models.base import Ticket
 
 
 # CRUD operations for Project
-def create_ticket(db: Session, ticket_id: int, title: str, description: Optional[str] = None, status: Optional[str] = None, priority: Optional[str] = None) -> Ticket:
+def create_ticket(db: Session, title: str, project_id: int, description: Optional[str] = None, status: Optional[str] = None, priority: Optional[str] = None) -> Ticket:
     new_ticket = Ticket(
-        id=ticket_id,
         title=title,
         description=description,
         status=status,
-        priority=priority
+        priority=priority,
+        project_id=project_id
     )
     db.add(new_ticket)
     db.commit()
