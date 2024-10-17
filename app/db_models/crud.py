@@ -43,5 +43,4 @@ def delete_ticket(db: Session, ticket_id: int) -> bool:
     if ticket:
         db.delete(ticket)
         db.commit()
-        return True
-    return False
+    return ticket
