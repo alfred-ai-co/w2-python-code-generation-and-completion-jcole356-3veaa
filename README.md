@@ -135,9 +135,11 @@ To run the application locally:
 
 1. **Install Dependencies**:
 
-   ```sh
-   pip install -r requirements.txt
-   ```
+A complete list of project requirements can be found at [docs/Requirements.md](./docs/Requirements.md) & [doc/Dependencies.md](./docs/Dependencies.md)
+
+```sh
+pip install -r requirements.txt
+```
 
 2. **Run the Application**:
 
@@ -198,6 +200,8 @@ pytest --cov=app tests/
 
 The project can be deployed using Docker or directly on a server.
 
+For a more comprehensive doc, see [Deployment.md](./docs/Deployment.md)
+
 **Docker Deployment**:
 
 1. **Build the Docker Image**:
@@ -231,3 +235,10 @@ Please refer to the [pull request template](.github/pull_request_template.md) fo
 #### Summary
 
 This documentation provides an overview of the Project Management API, including its features, folder structure, key components, API endpoints, and instructions for running, testing, and deploying the application. For more details, refer to the source code and the project documentation files.
+
+#### Other Documentation
+
+[Architecture](./docs/Architecture.md)
+[Contraints](./docs/Contraints.md)
+[Design](./docs/Design.md)
+[Proposed testing strategy](./docs/Testing.md)
