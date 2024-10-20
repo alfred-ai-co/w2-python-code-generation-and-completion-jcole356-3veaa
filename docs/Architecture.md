@@ -234,4 +234,4 @@ APP_ENV=dev
 
 #### Summary
 
-This documentation provides an overview of the project architecture, including the folder structure, key components, database models, CRUD operations, and API endpoints. It also includes instructions for running the application locally and using Docker for containerization. For more details, refer to the source code and the file:///Users/joshuacole/projects/app_academy/gen_ai/w2-python-code-generation-and-completion-jcole356-3veaa/README.md file.
+This documentation provides an overview of the project architecture, including the folder structure, key components, database models, CRUD operations, and API endpoints. It also includes instructions for running the application locally and using Docker for containerization. For more details, refer to the source code and the [README.md](../README.md) file.
