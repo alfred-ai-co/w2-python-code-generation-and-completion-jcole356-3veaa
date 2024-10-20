@@ -4,7 +4,6 @@ from app.db_models.base import Project, Ticket
 
 # CRUD operations for Project
 def create_project(db: Session, name: str, description: str) -> Project:
-    description = description or name
     project = Project(name=name, description=description)
     db.add(project)
     db.commit()
