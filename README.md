@@ -238,7 +238,7 @@ This documentation provides an overview of the Project Management API, including
 
 #### Other Documentation
 
-[Architecture](./docs/Architecture.md)
-[Contraints](./docs/Contraints.md)
-[Design](./docs/Design.md)
-[Proposed testing strategy](./docs/Testing.md)
+- [Architecture](./docs/Architecture.md)
+- [Contraints](./docs/Contraints.md)
+- [Design](./docs/Design.md)
+- [Proposed testing strategy](./docs/Testing.md)
