@@ -18,30 +18,30 @@ file. Below is a list of the main dependencies along with a brief description of
 
 1. **FastAPI**
 
-   - **Package**: [`fastapi`](command:_github.copilot.openSymbolFromReferences?%5B%22%22%2C%5B%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Fjoshuacole%2Fprojects%2Fapp_academy%2Fgen_ai%2Fw2-python-code-generation-and-completion-jcole356-3veaa%2Fapp%2Fapi%2Froutes%2Fprojects.py%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A1%2C%22character%22%3A5%7D%7D%2C%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Fjoshuacole%2Fprojects%2Fapp_academy%2Fgen_ai%2Fw2-python-code-generation-and-completion-jcole356-3veaa%2Fdocs%2FDependencies.md%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A6%2C%22character%22%3A17%7D%7D%5D%2C%22708977cf-67c2-4dc1-8855-a81bd3474297%22%5D "Go to definition")
+   - **Package**: `fastapi`
    - **Description**: FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints. It is used to create the API endpoints and handle HTTP requests.
    - **Documentation**: [FastAPI Documentation](https://fastapi.tiangolo.com/)
 
 2. **Uvicorn**
 
-   - **Package**: [`uvicorn[standard]`](command:_github.copilot.openSymbolFromReferences?%5B%22%22%2C%5B%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Fjoshuacole%2Fprojects%2Fapp_academy%2Fgen_ai%2Fw2-python-code-generation-and-completion-jcole356-3veaa%2Frequirements.txt%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A1%2C%22character%22%3A0%7D%7D%5D%2C%22708977cf-67c2-4dc1-8855-a81bd3474297%22%5D "Go to definition")
-   - **Description**: Uvicorn is a lightning-fast ASGI server implementation, using [`uvloop`](command:_github.copilot.openSymbolFromReferences?%5B%22%22%2C%5B%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Fjoshuacole%2Fprojects%2Fapp_academy%2Fgen_ai%2Fw2-python-code-generation-and-completion-jcole356-3veaa%2Fdocs%2FDependencies.md%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A13%2C%22character%22%3A82%7D%7D%5D%2C%22708977cf-67c2-4dc1-8855-a81bd3474297%22%5D "Go to definition") and [`httptools`](command:_github.copilot.openSymbolFromReferences?%5B%22%22%2C%5B%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Fjoshuacole%2Fprojects%2Fapp_academy%2Fgen_ai%2Fw2-python-code-generation-and-completion-jcole356-3veaa%2Fdocs%2FDependencies.md%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A13%2C%22character%22%3A95%7D%7D%5D%2C%22708977cf-67c2-4dc1-8855-a81bd3474297%22%5D "Go to definition"). It is used to serve the FastAPI application.
+   - **Package**: `uvicorn[standard]`
+   - **Description**: Uvicorn is a lightning-fast ASGI server implementation, using `uvloop` and `httptools`. It is used to serve the FastAPI application.
    - **Documentation**: [Uvicorn Documentation](https://www.uvicorn.org/)
 
 3. **SQLAlchemy**
 
-   - **Package**: [`sqlalchemy`](command:_github.copilot.openSymbolFromReferences?%5B%22%22%2C%5B%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Fjoshuacole%2Fprojects%2Fapp_academy%2Fgen_ai%2Fw2-python-code-generation-and-completion-jcole356-3veaa%2Fapp%2Fapi%2Froutes%2Fprojects.py%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A2%2C%22character%22%3A5%7D%7D%2C%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Fjoshuacole%2Fprojects%2Fapp_academy%2Fgen_ai%2Fw2-python-code-generation-and-completion-jcole356-3veaa%2Fdocs%2FDependencies.md%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A18%2C%22character%22%3A17%7D%7D%2C%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Fjoshuacole%2Fprojects%2Fapp_academy%2Fgen_ai%2Fw2-python-code-generation-and-completion-jcole356-3veaa%2Frequirements.txt%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A2%2C%22character%22%3A0%7D%7D%5D%2C%22708977cf-67c2-4dc1-8855-a81bd3474297%22%5D "Go to definition")
+   - **Package**: `sqlalchemy`
    - **Description**: SQLAlchemy is the Python SQL toolkit and Object-Relational Mapping (ORM) library. It is used for database interactions, including defining models and performing CRUD operations.
    - **Documentation**: [SQLAlchemy Documentation](https://www.sqlalchemy.org/)
 
 4. **Pydantic Settings**
 
-   - **Package**: [`pydantic-settings`](command:_github.copilot.openSymbolFromReferences?%5B%22%22%2C%5B%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Fjoshuacole%2Fprojects%2Fapp_academy%2Fgen_ai%2Fw2-python-code-generation-and-completion-jcole356-3veaa%2Frequirements.txt%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A3%2C%22character%22%3A0%7D%7D%5D%2C%22708977cf-67c2-4dc1-8855-a81bd3474297%22%5D "Go to definition")
+   - **Package**: `pydantic-settings`
    - **Description**: Pydantic is a data validation and settings management library using Python type annotations. It is used for configuration management in the project.
    - **Documentation**: [Pydantic Documentation](https://pydantic-docs.helpmanual.io/)
 
 5. **Loguru**
-   - **Package**: [`loguru`](command:_github.copilot.openSymbolFromReferences?%5B%22%22%2C%5B%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Fjoshuacole%2Fprojects%2Fapp_academy%2Fgen_ai%2Fw2-python-code-generation-and-completion-jcole356-3veaa%2Frequirements.txt%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A4%2C%22character%22%3A0%7D%7D%5D%2C%22708977cf-67c2-4dc1-8855-a81bd3474297%22%5D "Go to definition")
+   - **Package**: `loguru`
    - **Description**: Loguru is a library that aims to bring enjoyable logging in Python. It is used for logging within the application.
    - **Documentation**: [Loguru Documentation](https://loguru.readthedocs.io/)
 
