@@ -82,7 +82,7 @@ venv/
      - **routes/**: Defines API routes.
        - **projects.py**: Contains endpoints for managing projects.
    - **api_models/**: Contains Pydantic models for request and response validation.
-     - **projects.py**: Defines the [`ProjectCreate`](command:_github.copilot.openSymbolFromReferences?%5B%22%22%2C%5B%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Fjoshuacole%2Fprojects%2Fapp_academy%2Fgen_ai%2Fw2-python-code-generation-and-completion-jcole356-3veaa%2Fdocs%2FArchitecture.md%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A74%2C%22character%22%3A38%7D%7D%5D%2C%227354a47b-e1d1-4d78-81ce-5e3000dc3b8b%22%5D "Go to definition") and [`ProjectResponse`](command:_github.copilot.openSymbolFromReferences?%5B%22%22%2C%5B%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Fjoshuacole%2Fprojects%2Fapp_academy%2Fgen_ai%2Fw2-python-code-generation-and-completion-jcole356-3veaa%2Fdocs%2FArchitecture.md%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A74%2C%22character%22%3A902%7D%7D%5D%2C%227354a47b-e1d1-4d78-81ce-5e3000dc3b8b%22%5D "Go to definition") models.
+     - **projects.py**: Defines the `ProjectCreate` and `ProjectResponse` models.
    - **core/**: Core application settings and configurations.
      - **config.py**: Configuration settings for the application.
      - **events.py**: Event handlers for application startup and shutdown.
