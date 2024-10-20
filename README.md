@@ -25,6 +25,17 @@ app/
 ├── project_management.db
 ```
 
+### Crud
+
+The provided code in [crud.py](app/db_models/crud.py) defines a set of CRUD (Create, Read, Update, Delete) operations for managing projects using SQLAlchemy.
+
+```python
+from sqlalchemy.orm import Session
+from app.db_models.base import Project, Ticket
+```
+
+These CRUD functions provide the basic operations needed to manage projects in the database. They interact with the database using SQLAlchemy sessions and perform operations such as creating, reading, updating, and deleting projects. Each function ensures that the database is updated and the changes are committed, providing a consistent and reliable way to manage project data.
+
 ### Routes
 
 These files defines the API endpoints for managing projects using FastAPI.
