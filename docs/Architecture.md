@@ -72,7 +72,7 @@ venv/
      - **routes/**: Defines API routes.
        - **projects.py**: Contains endpoints for managing projects.
    - **api_models/**: Contains Pydantic models for request and response validation.
-     - **projects.py**: Defines the [`ProjectCreate`](command:_github.copilot.openSymbolFromReferences?%5B%22%22%2C%5B%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Fjoshuacole%2Fprojects%2Fapp_academy%2Fgen_ai%2Fw2-python-code-generation-and-completion-jcole356-3veaa%2Fapp%2Fapi_models%2Fprojects.py%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A5%2C%22character%22%3A6%7D%7D%2C%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Fjoshuacole%2Fprojects%2Fapp_academy%2Fgen_ai%2Fw2-python-code-generation-and-completion-jcole356-3veaa%2Fapp%2Fapi%2Froutes%2Fprojects.py%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A6%2C%22character%22%3A36%7D%7D%5D%2C%22930e98f6-fe95-4268-a97a-43077755f7c1%22%5D "Go to definition") and [`ProjectResponse`](command:_github.copilot.openSymbolFromReferences?%5B%22%22%2C%5B%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Fjoshuacole%2Fprojects%2Fapp_academy%2Fgen_ai%2Fw2-python-code-generation-and-completion-jcole356-3veaa%2Fapp%2Fapi%2Froutes%2Fprojects.py%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A6%2C%22character%22%3A51%7D%7D%5D%2C%22930e98f6-fe95-4268-a97a-43077755f7c1%22%5D "Go to definition") models.
+     - **projects.py**: Defines the `ProjectCreate` and `ProjectResponse` models.
    - **core/**: Core application settings and configurations.
      - **config.py**: Configuration settings for the application.
      - **events.py**: Event handlers for application startup and shutdown.
@@ -226,21 +226,10 @@ The project includes a Dockerfile for containerization. To build and run the Doc
 
 #### Environment Variables
 
-The project uses environment variables for configuration. An example configuration is provided in the file:///Users/joshuacole/projects/app_academy/gen_ai/w2-python-code-generation-and-completion-jcole356-3veaa/app/.env.example file.
+The project uses environment variables for configuration. An example configuration is provided in the [.env.example](../.env.example) file.
 
 ```example
 APP_ENV=dev
-```
-
-#### Ignored Files
-
-The file:///Users/joshuacole/projects/app_academy/gen_ai/w2-python-code-generation-and-completion-jcole356-3veaa/.gitignore file specifies files and directories that should be ignored by Git, including environment files and the SQLite database file.
-
-```gitignore
-**.env
-dev.env
-prod.env
-project_management.db
 ```
 
 #### Summary
