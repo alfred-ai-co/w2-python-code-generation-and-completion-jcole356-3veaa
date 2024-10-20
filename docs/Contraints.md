@@ -19,7 +19,7 @@ This section outlines the constraints and limitations that apply to the Project 
    - **Uvicorn**: The project uses Uvicorn as the ASGI server. Ensure that the Uvicorn version used is compatible with FastAPI.
 
 4. **Environment Variables**:
-   - The project uses environment variables for configuration. Ensure that the necessary environment variables are set correctly in the [`.env`](command:_github.copilot.openSymbolFromReferences?%5B%22%22%2C%5B%7B%22uri%22%3A%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2FUsers%2Fjoshuacole%2Fprojects%2Fapp_academy%2Fgen_ai%2Fw2-python-code-generation-and-completion-jcole356-3veaa%2F.gitignore%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22pos%22%3A%7B%22line%22%3A163%2C%22character%22%3A2%7D%7D%5D%2C%22ec6ee35d-996c-4528-a795-30373f13edb7%22%5D "Go to definition") file.
+   - The project uses environment variables for configuration. Ensure that the necessary environment variables are set correctly in the `.env` file.
 
 #### Operational Constraints
 
@@ -63,4 +63,4 @@ This section outlines the constraints and limitations that apply to the Project 
 
 #### Summary
 
-Understanding and addressing these constraints is crucial for the successful development, deployment, and maintenance of the Project Management API. By adhering to these constraints, you can ensure that the project remains robust, secure, and maintainable. For more details, refer to the source code and the project documentation files, including the file:///Users/joshuacole/projects/app_academy/gen_ai/w2-python-code-generation-and-completion-jcole356-3veaa/docs/Requirements.md and file:///Users/joshuacole/projects/app_academy/gen_ai/w2-python-code-generation-and-completion-jcole356-3veaa/docs/Architecture.md files.
+Understanding and addressing these constraints is crucial for the successful development, deployment, and maintenance of the Project Management API. By adhering to these constraints, you can ensure that the project remains robust, secure, and maintainable.
