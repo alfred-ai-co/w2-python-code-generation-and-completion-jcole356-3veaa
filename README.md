@@ -1,90 +1,244 @@
-# Alfred AI FastAPI Project Management API
+### Project Management API
 
-This project is a Project Management API built with FastAPI, SQLAlchemy, and SQLite. The API allows users to manage projects and their associated tickets.
+#### Overview
 
-## Folder Structure
-```bash
+This project is a Project Management API built using FastAPI, SQLAlchemy, and SQLite. It allows users to manage projects and their associated tickets. The architecture is designed to be modular, scalable, and maintainable, leveraging the strengths of each technology to provide a robust API.
+
+#### Features
+
+- **Create, Read, Update, and Delete (CRUD) Operations**: Manage projects and tickets with ease.
+- **FastAPI**: High-performance web framework for building APIs.
+- **SQLAlchemy**: Powerful ORM for database interactions.
+- **SQLite**: Lightweight and easy-to-use database.
+- **Pydantic**: Data validation and settings management.
+- **Loguru**: Advanced logging capabilities.
+
+#### Folder Structure
+
+```
+.github/
+    pull_request_template.md
+    workflows/
+        pr-notify.yml
+.gitignore
 app/
-├── api/
-│ ├── errors/
-│ │ ├── http_error.py
-│ │ ├── validation_error.py
-│ ├── routes/
-│ │ ├── api.py
-│ │ ├── home.py
-├── core/
-│ ├── config.py
-│ ├── events.py
-├── db_models/
-│ ├── base.py
-│ ├── crud.py
-│ ├── session.py
-├── main.py
-├── project_management.db
+    __init__.py
+    __pycache__/
+    .env
+    .env.example
+    api/
+        dependencies/
+        errors/
+        routes/
+            projects.py
+    api_models/
+        __init__.py
+        __pycache__/
+        projects.py
+    core/
+        __init__.py
+        __pycache__/
+        config.py
+        events.py
+        logging.py
+        settings/
+    db_models/
+        __init__.py
+        __pycache__/
+        base.py
+        crud.py
+        session.py
+    main.py
+Dockerfile
+docs/
+    Architecture.md
+    Constraints.md
+    Dependencies.md
+    Deployment.md
+    Design.md
+    Project Documentation.md
+    Requirements.md
+    Testing.md
+LICENSE
+README.md
+requirements.txt
+venv/
+    bin/
+    include/
+    lib/
+    pyvenv.cfg
 ```
 
-## .env Instructions
+#### Key Components
 
-Create a `.env` file in the `app/` directory with the following contents:
+1. **FastAPI**: The main web framework used to create the API endpoints and handle HTTP requests.
+2. **SQLAlchemy**: The ORM (Object-Relational Mapping) library used for database interactions, including defining models and performing CRUD operations.
+3. **SQLite**: The database used to store project and ticket data.
+4. **Pydantic**: Used for data validation and settings management.
+5. **Loguru**: Used for logging within the application.
 
-```env
-APP_ENV=dev
+#### API Endpoints
+
+- **Create a Project**: `POST /projects/`
+- **Retrieve a Project**: `GET /projects/{project_id}`
+- **Update a Project**: `PUT /projects/{project_id}`
+- **Delete a Project**: `DELETE /projects/{project_id}`
+
+#### Example Code Snippets
+
+**Creating a Project**
+
+```python
+@router.post('', response_model=ProjectResponse)
+async def create_project(project: ProjectCreate, db: Session = Depends(get_db)):
+    db_project = crud.create_project(db, project.name, project.description)
+    return db_project
 ```
 
-## Using the Dockerfile
+**Reading a Project**
 
-### Build the Docker Image
-To build the image, navigate to the root directory of the project and run:
-
-```bash
-docker build -t <image_name> .
+```python
+@router.get('/{project_id}', response_model=ProjectResponse)
+async def read_project(project_id: int, db: Session = Depends(get_db)):
+    db_project = crud.get_project(db, project_id)
+    if db_project is None:
+        raise HTTPException(status_code=404, detail=f"Project with id {project_id} not found")
+    return db_project
 ```
 
-### Run the Docker Image
-To run the docker container with the environment variables, run:
+**Updating a Project**
 
-```bash
-docker run --env-file app/.env -p 8000:8000 <image_name>
+```python
+@router.put('/{project_id}', response_model=ProjectResponse)
+async def update_project(project_id: int, project: ProjectCreate, db: Session = Depends(get_db)):
+    db_project = crud.update_project(db, project_id, project.name, project.description)
+    if db_project is None:
+        raise HTTPException(status_code=404, detail=f"Project with id {project_id} not found")
+    return db_project
 ```
 
-This command will:
-- Use the environment variables in the `.env` file
-- Map the container's port 8000 to the host's port 8000
-- Run the container in the background
-- Start the FastAPI application with the `dev` flag for FastAPI (separate from the environment variable to enable debug mode)
+**Deleting a Project**
 
-# Project Management API Documentation
+```python
+@router.delete('/{project_id}')
+async def delete_project(project_id: int, db: Session = Depends(get_db)):
+    db_project = crud.get_project(db, project_id)
+    if db_project is None:
+        raise HTTPException(status_code=404, detail=f"Project with id {project_id} not found")
+    crud.delete_project(db, project_id)
+    return {'message': f'Project with id {project_id} deleted'}
+```
 
-The Project Management API is designed to facilitate the management of projects and tickets within those projects. It provides a set of endpoints for creating, retrieving, updating, and deleting both projects and tickets.
+#### Running the Application
 
-## Endpoints
+To run the application locally:
 
-### Project Endpoints
+1. **Install Dependencies**:
 
-| Operation                | HTTP Method | Endpoint                   | Description                |
-|--------------------------|-------------|----------------------------|----------------------------|
-| **Create a new project** | `POST`      | `/projects/`               | Create a new project       |
-| **Retrieve a project**   | `GET`       | `/projects/{project_id}`   | Retrieve a specific project by ID |
-| **Update a project**     | `PUT`       | `/projects/{project_id}`   | Update a specific project by ID   |
-| **Delete a project**     | `DELETE`    | `/projects/{project_id}`   | Delete a specific project by ID   |
+A complete list of project requirements can be found at [docs/Requirements.md](./docs/Requirements.md) & [doc/Dependencies.md](./docs/Dependencies.md)
 
-### Ticket Endpoints
+```sh
+pip install -r requirements.txt
+```
 
-| Operation                | HTTP Method | Endpoint                   | Description                |
-|--------------------------|-------------|----------------------------|----------------------------|
-| **Create a new ticket**  |             |                            |                            |
-| **Retrieve a ticket**    |             |                            |                            |
-| **Update a ticket**      |             |                            |                            |
-| **Delete a ticket**      |             |                            |                            |
+2. **Run the Application**:
 
-## Running the Application Locally
-To run the application locally, make sure you have Python installed. Then follow these steps at the root directory of the project:
+   ```sh
+   uvicorn app.main:app --reload
+   ```
 
-1. Install depdencies: `pip install -r requirements.txt`
-2. Run the application: `fastapi dev app/main.py` You may use `dev` or `prod` as the `fastapi` argument
-3. Navigate to `http://localhost:8000` to view the application
+3. **Access the Application**:
+   - Navigate to `http://localhost:8000` to view the application.
 
-* Note: The application will run in debug mode by default. To disable debug mode, set the `APP_ENV` environment variable to `prod`.
+#### Docker Support
 
-## License
-This project is licensed under the MIT License. See the License file for details.
+The project includes a Dockerfile for containerization. To build and run the Docker image:
+
+1. **Build the Docker Image**:
+
+   ```sh
+   docker build -t project-management-api .
+   ```
+
+2. **Run the Docker Container**:
+
+   ```sh
+   docker run --env-file app/.env -p 8000:8000 project-management-api
+   ```
+
+3. **Access the Application**:
+   - Navigate to `http://localhost:8000` to view the application.
+
+#### Environment Variables
+
+The project uses environment variables for configuration. An example configuration is provided in the `.env.example` file. You can create a `.env` file based on this example.
+
+**Example `.env` File**
+
+```example
+APP_ENV=prod
+DATABASE_URL=sqlite:///./project_management.db
+```
+
+#### Testing
+
+To ensure the functionality, reliability, and stability of the Project Management API, the project includes unit tests and integration tests.
+
+**Running Tests**:
+
+```sh
+pytest
+```
+
+**Generating Coverage Report**:
+
+```sh
+pytest --cov=app tests/
+```
+
+#### Deployment
+
+The project can be deployed using Docker or directly on a server.
+
+For a more comprehensive doc, see [Deployment.md](./docs/Deployment.md)
+
+**Docker Deployment**:
+
+1. **Build the Docker Image**:
+   ```sh
+   docker build -t project-management-api .
+   ```
+2. **Run the Docker Container**:
+   ```sh
+   docker run --env-file app/.env -p 8000:8000 project-management-api
+   ```
+
+**Direct Deployment**:
+
+1. **Install Dependencies**:
+   ```sh
+   pip install -r requirements.txt
+   ```
+2. **Run the Application**:
+   ```sh
+   uvicorn app.main:app --host 0.0.0.0 --port 8000
+   ```
+
+#### License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+#### Contributing
+
+Please refer to the [pull request template](.github/pull_request_template.md) for guidelines on how to contribute to this project.
+
+#### Summary
+
+This documentation provides an overview of the Project Management API, including its features, folder structure, key components, API endpoints, and instructions for running, testing, and deploying the application. For more details, refer to the source code and the project documentation files.
+
+#### Other Documentation
+
+- [Architecture](./docs/Architecture.md)
+- [Contraints](./docs/Contraints.md)
+- [Design](./docs/Design.md)
+- [Proposed testing strategy](./docs/Testing.md)
