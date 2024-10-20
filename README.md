@@ -60,7 +60,7 @@ from app.api.dependencies.sqldb import get_db
 
 [projects.py](app/api/routes/projects.py)
 
-This file defines a set of CRUD (Create, Read, Update, Delete) endpoints for managing projects. Each endpoint interacts with the database through the crud module and uses Pydantic models for request validation and response formatting. The get_db dependency ensures that each endpoint has access to a database session.
+This file defines a set of **CRUD (Create, Read, Update, Delete)** endpoints for managing projects. Each endpoint interacts with the database through the crud module and uses Pydantic models for request validation and response formatting. The `get_db` dependency ensures that each endpoint has access to a database session.
 
 ## .env Instructions
 
