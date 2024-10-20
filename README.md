@@ -49,11 +49,11 @@ from app.api_models.projects import ProjectCreate, ProjectResponse
 from app.api.dependencies.sqldb import get_db
 ```
 
-- **FastAPI Imports**: 'APIRouter' is used to create a router for the API endpoints. 'HTTPException' is used to handle HTTP errors. 'Depends' is used for dependency injection.
-- **SQLAlchemy Import**: 'Session' is used to manage database sessions.
-- **CRUD Operations**: The 'crud' module contains functions for creating, reading, updating, and deleting projects.
-- **API Models**: 'ProjectCreate' and 'ProjectResponse' are 'Pydantic' models used for request and response validation.
-- **Database Dependency**: 'get_db' is a dependency that provides a database session.
+- **FastAPI Imports**: `APIRouter` is used to create a router for the API endpoints. `HTTPException` is used to handle HTTP errors. `Depends` is used for dependency injection.
+- **SQLAlchemy Import**: `Session` is used to manage database sessions.
+- **CRUD Operations**: The `crud` module contains functions for creating, reading, updating, and deleting projects.
+- **API Models**: `ProjectCreate` and `ProjectResponse` are `Pydantic` models used for request and response validation.
+- **Database Dependency**: `get_db` is a dependency that provides a database session.
 - **Router**: An instance of `APIRouter` is created to define the project-related endpoints.
 
 #### Projects
